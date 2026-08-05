@@ -1,0 +1,111 @@
+'use client';
+import DailyPuzzles from './DailyPuzzles';
+import TrendingCard from './TrendingCard';
+import InteractiveCard from './InteractiveCard';
+import NewsGrid from './NewsGridCategory';
+import CategoryNewsCard from './CategoryNewsCard';
+import CategoryFirstSection from './CategoryFirstSection';
+import SectionWrapper from './SectionWrapper';
+import EducationData from '../../public/data/education.json';
+import HorizontalNews from './HorizontalNews';
+import EditorsPicksSection from './EditorsPick';
+
+interface Props {
+  activeMain: string;
+  data: any[];
+}
+
+export default function CategoryContent({ activeMain, data }: Props) {
+  const excludeSlugs = [
+    "lawyers-switch-sides-bancredito-15-million-lesson",
+  ];
+
+  const filteredData = data.filter(item => !excludeSlugs.includes(item.slug));
+
+  function formatCategoryName(text: string) {
+    if (!text) return '';
+    return text.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  }
+
+
+  return (
+    <div className="w-100 container">
+      <div>
+        <h1
+          className="text-black mb-2"
+          style={{
+            fontSize: '36.496px',
+            fontFamily: "'Archivo', Arial, sans-serif",
+            fontWeight: 900
+          }}
+        >
+          {formatCategoryName(activeMain)}
+        </h1>
+        <hr style={{ borderTop: '1px solid #4444' }} />
+
+      </div>
+      <div className="row">
+        {/* Left Column */}
+        <div className="col-lg-9 col-12 mb-3">
+          <NewsGrid data={[filteredData[0], filteredData[1], filteredData[2], filteredData[3], filteredData[4]]} />
+        </div>
+
+        {/* Right Column */}
+        <div className="col-lg-3 col-12 mb-md-3">
+          <InteractiveCard data={filteredData[5]} />
+        </div>
+      </div>
+
+
+      <div className="row mt-md-4 mt-3">
+        <div className="col-lg-9 col-12">
+          <CategoryFirstSection
+            data={{
+              main: filteredData[6],
+              side: [filteredData[7], filteredData[8]],
+              bottomCards: [filteredData[9], filteredData[10], filteredData[11], filteredData[12]],
+            }}
+          />
+
+          {/* <div className='mb-4'>
+            <SectionWrapper title=" " >
+              <EditorsPicksSection data={filteredData} />
+            </SectionWrapper>
+          </div> */}
+        </div>
+
+        <div className="col-lg-3 col-12">
+          <TrendingCard
+            data={{
+              section: filteredData[0]?.category || '',
+              items: [filteredData[13], filteredData[14], filteredData[15]]
+                .filter(article => article !== undefined)
+                .map(article => ({
+                  image: article.image,
+                  title: article.title,
+                  description: article.shortdescription,
+                  slug: article.slug,
+                  date: article.date,
+                  category: article.category
+                })),
+            }}
+          />
+        </div>
+      </div>
+
+      <div className="row ">
+        <div className="col-lg-9 col-md-12 col-sm-12 mt-5 ">
+          <SectionWrapper title='More News'>
+            {filteredData.slice(16).map((item, index) => (
+              <CategoryNewsCard key={index + 17} data={item} />
+            ))}
+          </SectionWrapper>
+        </div>
+
+        <div className="col-lg-3 col-md-12 col-sm-12 d-none d-lg-block"></div>
+      </div>
+
+    </div>
+
+  );
+}

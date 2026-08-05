@@ -1,0 +1,112 @@
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { BiCalendar } from 'react-icons/bi';
+
+interface ArticleHeaderProps {
+  category: string;
+  title: string;
+  date?: string;
+}
+  function formatCategoryName(text: string) {
+    if (!text) return '';
+    return text.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  }
+
+const ArticleHeader: React.FC<ArticleHeaderProps> = ({
+  category,
+  title,
+  date,
+}) => {
+  return (
+    <div style={{ padding: '1rem 0', borderBottom: '2px solid #000' }}>
+      <div style={{ marginBottom: '1rem' }}>
+        {/* <div
+          className="text-uppercase fw-bold"
+          style={{
+            color: '#B50021',
+            fontSize: '13.5px',
+            fontFamily: "'Rubik', Arial, sans-serif",
+            letterSpacing: '0.08em',
+            display: 'inline-block',
+            position: 'relative',
+          }}
+        >
+          {formatCategoryName(category)}
+
+         
+        </div> */}
+      </div>
+      <h1
+        className="fw-bold mb-3 fst-italic"
+        style={{
+          fontSize: 'clamp(28px, 5vw, 42px)',
+          fontFamily: "'Archivo', Arial, sans-serif",
+          fontWeight: 900,
+          color: '#1b1214d7',
+          lineHeight: 1.25,
+          fontStyle: 'italic',
+        }}
+      >
+        {title}
+      </h1>
+
+      <div
+        className="d-flex justify-content-between align-items-center flex-nowrap w-100 mt-2"
+        style={{ gap: '1rem', flexWrap: 'nowrap' }}
+      >
+        <div
+          className="d-flex align-items-center"
+          style={{
+            fontSize: '10px',
+            fontWeight: 200,
+            fontFamily: "'Rubik', Arial, sans-serif",
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+          }}
+        >
+          <BiCalendar size={10} style={{ marginRight: '4px', color: '#000' }} />
+          <span style={{ color: '#' }}>Published on</span>
+          <span style={{ color: '#555', marginLeft: '4px' }}>{date}</span>
+        </div>
+
+        <div className="d-flex gap-2 flex-shrink-0">
+         
+          <button
+            className="btn btn-outline-dark rounded-circle d-flex justify-content-center align-items-center social-icon-btn"
+            style={{
+              width: '38px',
+              height: '38px',
+              fontSize: '14px',
+              border: '1px solid #ccc',
+              transition: 'all 0.3s ease',
+            }}
+          >
+            <a href="https://x.com/TangentWeekly" target="_blank" rel="noopener noreferrer" aria-label="Visit our Twitter page" style={{ color: 'inherit', textDecoration: 'none' }}>
+              <FaXTwitter />
+            </a>
+          </button>
+          <button
+            className="btn btn-outline-dark rounded-circle d-flex justify-content-center align-items-center social-icon-btn"
+            style={{
+              width: '38px',
+              height: '38px',
+              fontSize: '14px',
+              border: '1px solid #ccc',
+              transition: 'all 0.3s ease',
+            }}
+          >
+            <a href="https://www.instagram.com/tangentweekly/" aria-label="Visit our Instagram page" target="_blank" rel="noopener noreferrer">
+              <FaInstagram /></a>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ArticleHeader;

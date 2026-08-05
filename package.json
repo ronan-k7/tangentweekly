@@ -1,0 +1,36 @@
+{
+  "name": "houston",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && node w3infoclear.js",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fontsource/merriweather": "^5.2.9",
+    "@fontsource/source-sans-pro": "^5.2.5",
+    "bootstrap": "^5.3.7",
+    "framer-motion": "^12.23.3",
+    "lucide-react": "^0.536.0",
+    "next": "15.3.4",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "sass": "^1.89.2"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^15.4.1",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  },
+  "browserslist": [
+    "defaults and supports es6-module",
+    "not IE 11",
+    "not dead"
+  ]
+}

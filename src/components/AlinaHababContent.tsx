@@ -27,7 +27,13 @@ export const AlinaHababContent: React.FC = () => {
       <p style={{ textAlign: 'justify', marginBottom: '1.25rem' }}>
         It was a dream position; it was her chance to build a lasting legacy, secure her financial future, and establish herself among the most influential legal advisers in international finance.
       </p>
+      <p style={{ textAlign: 'justify', marginBottom: '1.25rem' }}>
+        She had served as Donald Trump’s personal lawyer, general counsel to his Save America PAC, and counselor to the president at the White House.
+      </p>
 
+      <p style={{ textAlign: 'justify', marginBottom: '1.25rem' }}>
+        That background carried considerable prestige, and an expectation of discipline, consistency and commitment. A source close to the family alleges that she failed to give her responsibilities the sustained attention they required, and her romantic relationship affected her professional performance.
+      </p>
       <p style={{ textAlign: 'justify', marginBottom: '1.25rem' }}>
         <strong>Then came a younger man. And her priorities collapsed.</strong>
       </p>

@@ -1,11 +1,26 @@
 .content {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 @media (min-width: 992px) {
   .content {
     padding-left: 5rem;
     padding-right: 5rem;
-    margin-top: 5rem;
+    margin-top: 1.25rem;
+  }
+}
+
+.stickySidebar {
+  position: static;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .stickySidebar {
+    position: sticky;
+    top: 95px;
+    max-width: 305px;
+    width: 100%;
+    margin-left: auto;
   }
 }

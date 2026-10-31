@@ -5,9 +5,9 @@ import AuthorInfo from './AuthorInfo';
 import EditorsPicksSection from './EditorsPick';
 import politicalData from '../../public/data/politics.json';
 import ArticleWrapper from './ArticleWrapper';
-import { FaInstagram } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
-import { BiCalendar } from 'react-icons/bi';
+import { FaInstagram } from './Icons';
+import { FaXTwitter } from './Icons';
+import { BiCalendar } from './Icons';
 import { motion } from 'framer-motion';
 import Image from 'next/image'; 
 

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Navbar, Container } from 'react-bootstrap';
+
 import { slugify } from '../utils/slugify';
 import Image from "next/image";
 
@@ -65,9 +65,7 @@ export default function SecondHeader() {
 
   return (
     <header>
-      <Navbar
-        expand="lg"
-        expanded={expanded}
+      <nav
         style={{
           backgroundColor: '#1c2146',
           minHeight: '78px',
@@ -79,9 +77,9 @@ export default function SecondHeader() {
           width: '100%',
           zIndex: 1050,
         }}
-        className="text-white"
+        className="navbar navbar-expand-lg text-white"
       >
-        <Container fluid className="p-0 d-flex justify-content-between align-items-center position-relative">
+        <div className="container-fluid p-0 d-flex justify-content-between align-items-center position-relative">
           <div className="d-flex align-items-center" style={{ gap: '0.4rem' }}>
             <button
               onClick={() => setExpanded(!expanded)}
@@ -143,8 +141,8 @@ export default function SecondHeader() {
             </Link>
            
           </div>
-        </Container>
-      </Navbar>
+        </div>
+      </nav>
 
       {expanded && (
         <div

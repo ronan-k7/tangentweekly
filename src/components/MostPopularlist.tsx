@@ -1,13 +1,13 @@
 import React from 'react';
 import SectionWrapper from './SectionWrapper';
 import Link from 'next/link';
-import { BiCalendar } from 'react-icons/bi';
+import { BiCalendar } from './Icons';
 
 interface Article {
   title: string;
   slug: string;
   date: string;
-  category: string
+  category: string;
 }
 
 interface MostPopularListProps {
@@ -17,19 +17,19 @@ interface MostPopularListProps {
 const MostPopularList: React.FC<MostPopularListProps> = ({ data }) => {
   return (
     <SectionWrapper title="Most Popular">
-   {data.slice(0, 4).map((article, index) => (
+      {data.slice(0, 4).map((article, index) => (
         <div key={index} className="mb-3 pb-3 border-bottom">
           <Link href={`/${article.category}/${article.slug}`} className="text-decoration-none" title={`${article.slug}`}>
             <div className="d-flex align-items-start">
-              <div className="fw-bold text-danger me-2">{index + 1}.</div>
+              <div className="fw-bold text-danger me-2" style={{ fontSize: '15px' }}>{index + 1}.</div>
               <div
                 className="fw-semibold"
                 style={{
                   color: '#111111',
-                  fontSize: '18px',
+                  fontSize: '15.5px',
                   fontFamily: "'Archivo', Arial, sans-serif",
                   fontWeight: 700,
-                  lineHeight: '1.3',
+                  lineHeight: '1.35',
                 }}
               >
                 {article.title}

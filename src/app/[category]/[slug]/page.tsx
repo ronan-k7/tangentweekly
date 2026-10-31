@@ -21,6 +21,7 @@ import AuthorInfo from '@/components/AuthorInfo';
 import NavigationSection from '@/components/NavigationSection';
 import ClientS2 from '@/components/ClientS2';
 import ClientS3 from '@/components/ClientS3';
+import ClientS4 from '@/components/ClientS4';
 
   type Article = {
     category: string;
@@ -159,6 +160,124 @@ import ClientS3 from '@/components/ClientS3';
       };
     }
 
+    if (slug === 'when-vanity-passion-and-poor-judgment-threaten-a-brilliant-career' || slug === 'alina-habab-career-controversy') {
+      return {
+        title: "When Vanity, Passion, and Poor Judgment Threaten a Brilliant Career",
+        description: "Alina Habab had beauty, intelligence, power, prestige, and the professional opportunity of a lifetime. What she apparently lacked was the discipline to protect it.",
+        keywords: "Alina Habab, Vanity Passion and Poor Judgment Threaten a Brilliant Career, international banking family legal adviser, high profile lawyer, legal controversy",
+        authors: [{ name: "Stephen M. Knowles" }],
+        alternates: { canonical: currentUrl },
+        openGraph: {
+          title: "When Vanity, Passion, and Poor Judgment Threaten a Brilliant Career",
+          description: "Alina Habab had beauty, intelligence, power, prestige, and the professional opportunity of a lifetime. What she apparently lacked was the discipline to protect it.",
+          url: currentUrl,
+          siteName: 'Tangent Weekly',
+          images: [
+            {
+              url: `${siteUrl}/images/alina-habab-career-controversy.webp`,
+              width: 1200,
+              height: 630,
+              alt: "When Vanity, Passion, and Poor Judgment Threaten a Brilliant Career",
+            },
+          ],
+          locale: 'en_US',
+          type: 'article',
+        },
+        twitter: {
+          card: 'summary_large_image',
+          title: "When Vanity, Passion, and Poor Judgment Threaten a Brilliant Career",
+          description: "Alina Habab had beauty, intelligence, power, prestige, and the professional opportunity of a lifetime. What she apparently lacked was the discipline to protect it.",
+          images: [`${siteUrl}/images/alina-habab-career-controversy.webp`],
+          site: '@TangentWeekly',
+          creator: "@Stephenmknowles",
+        },
+        other: {
+          'script:ld+json': JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'NewsArticle',
+            headline: "When Vanity, Passion, and Poor Judgment Threaten a Brilliant Career",
+            datePublished: "2026-10-31T00:00:00.000Z",
+            author: {
+              '@type': 'Person',
+              name: "Stephen M. Knowles",
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Tangent Weekly',
+              logo: {
+                '@type': 'ImageObject',
+                url: `${siteUrl}/tangent-logo.webp`,
+              },
+            },
+            image: `${siteUrl}/images/alina-habab-career-controversy.webp`,
+            url: currentUrl,
+            articleBody: "Alina Habab had beauty, intelligence, power, prestige, and the professional opportunity of a lifetime. What she apparently lacked was the discipline to protect it.",
+            keywords: "Alina Habab, international banking family legal adviser, high profile lawyer, legal controversy",
+          }),
+        },
+      };
+    }
+
+    if (slug === 'when-vanity-passion-and-poor-judgment-threaten-a-brilliant-career') {
+  return {
+    title: "When Vanity, Passion, and Poor Judgment Threaten a Brilliant Career",
+    description: "Alina Habba's reported personal and professional decisions raise questions about career priorities, responsibility, and the potential cost of sacrificing a major professional opportunity.",
+    keywords: `Alina Habba, politics, Alina Habba career, Alina Habba controversy, Alina Habba professional career, Alina Habba relationship, Stephen M. Knowles, vanity passion and poor judgment`,
+    authors: [{ name: "Stephen M. Knowles" }],
+    alternates: { canonical: currentUrl },
+    openGraph: {
+      title: "When Vanity, Passion, and Poor Judgment Threaten a Brilliant Career",
+      description: "Alina Habba's reported personal and professional decisions raise questions about career priorities, responsibility, and the potential cost of sacrificing a major professional opportunity.",
+      url: currentUrl,
+      siteName: 'Tangent Weekly',
+      images: [
+        {
+          url: `${siteUrl}/images/alina-habab-career-controversy.webp`,
+          width: 1200,
+          height: 630,
+          alt: "Alina Habba: When Vanity, Passion, and Poor Judgment Threaten a Brilliant Career",
+        },
+      ],
+      locale: 'en_US',
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: "When Vanity, Passion, and Poor Judgment Threaten a Brilliant Career",
+      description: "Alina Habba's reported personal and professional decisions raise questions about career priorities, responsibility, and the potential cost of sacrificing a major professional opportunity.",
+      images: [`${siteUrl}/images/alina-habab-career-controversy.webp`],
+      site: '@TangentWeekly',
+      creator: "@Stephenmknowles",
+    },
+    other: {
+      'script:ld+json': JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'NewsArticle',
+        headline: "When Vanity, Passion, and Poor Judgment Threaten a Brilliant Career",
+        description: "Alina Habba's reported personal and professional decisions raise questions about career priorities, responsibility, and the potential cost of sacrificing a major professional opportunity.",
+        datePublished: "2026-10-31T00:00:00.000Z",
+        author: {
+          '@type': 'Person',
+          name: "Stephen M. Knowles",
+          url: "https://x.com/Stephenmknowles",
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Tangent Weekly',
+          logo: {
+            '@type': 'ImageObject',
+            url: `${siteUrl}/tangent-logo.webp`,
+          },
+        },
+        image: `${siteUrl}/images/alina-habab-career-controversy.webp`,
+        url: currentUrl,
+        articleSection: "Politics",
+        articleBody: "One of the most accomplished lawyers of her generation, she had secured an extraordinary four-year assignment advising a wealthy international banking family whose business empire spends over $100 million annually on legal, financial, and public relations advisers. It was a dream position; it was her chance to build a lasting legacy, secure her financial future, and establish herself among the most influential legal advisers in international finance. Then came a younger man. And her priorities collapsed. She ended her second marriage and embarked on a whirlwind romance with a boyfriend fourteen years her junior. Private jets to Saint Barthélemy, luxurious escapes across Europe, romantic adventures in Turkey, and extravagant summers in Italy replaced the discipline and responsibilities of her professional life. According to longtime friends, she claimed to have discovered true love for the first time. But was it love, or the intoxicating combination of vanity, attention, and the illusion of eternal youth? Apparently, an endless honeymoon was not enough. Marriage, motherhood, and the prospect of a spectacular New York wedding reportedly costing more than $10 million became part of her new vision of happiness. Meanwhile, the four-year professional commitment that could have defined her career was seemingly pushed aside. A person entrusted with protecting a financial empire appeared unable to protect her own future. There is a profound irony in a brilliant lawyer capable of negotiating multimillion-dollar transactions yet seemingly unwilling to calculate the personal cost of her own decisions. She may call it love. Others may see a reckless surrender of professional responsibility to personal gratification. The real tragedy, if the reported sacrifices prove true, is not that she fell in love. It is that she may have confused romantic excitement with a reason to abandon everything she had worked to achieve. Beauty fades. Passion changes. Private jets eventually land. And the younger lover who makes every day feel like a honeymoon must eventually confront the realities of ordinary life. But professional credibility, lost opportunities, and broken commitments cannot always be recovered. Perhaps her gamble will pay off. Perhaps she will discover that love was worth every sacrifice. Or perhaps she will learn that the most dangerous form of vanity is believing that intelligence, beauty, and privilege make you immune to consequences. A $10 million wedding may buy the illusion of a fairy tale. A $50 million career sacrifice may become a lifetime of regret. And when the champagne bottles have dried and the honeymoon is over, and reality finally arrives, she may discover that the most expensive man in her life was the one she believed was giving her everything.",
+        keywords: `Alina Habba, politics, Alina Habba career, Alina Habba controversy, Alina Habba professional career, Alina Habba relationship, Stephen M. Knowles, vanity passion and poor judgment`,
+      }),
+    },
+  };
+}
     if (slug === 'bancredito-receivership-transparency-dispute') {
       return {
         title: "Bancrédito Case Highlights Risks of Receivership Oversight",
@@ -347,6 +466,57 @@ import ClientS3 from '@/components/ClientS3';
         </>
       )
     }
+    if (slug === 'when-vanity-passion-and-poor-judgment-threaten-a-brilliant-career') {
+  return (
+    <>
+      <SecondHeader />
+      <NavigationSection />
+      <main className={`container ${styles.content}`}>
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "NewsArticle",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `https://www.tangentweekly.com/${category}/${slug}/`
+              },
+              "headline": "When Vanity, Passion, and Poor Judgment Threaten a Brilliant Career",
+              "description": "Alina Habba's reported personal and professional decisions raise questions about career priorities, responsibility, and the potential cost of sacrificing a major professional opportunity.",
+              "image": "https://www.tangentweekly.com/images/alina-habab-career-controversy.webp",
+              "author": {
+                "@type": "Person",
+                "name": "Stephen M. Knowles",
+                "url": "https://x.com/Stephenmknowles"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Tangent Weekly",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.tangentweekly.com/images/tangent-weekly-logo.webp"
+                }
+              },
+              "articleSection": "Politics",
+              "datePublished": "2026-10-31T00:00:00.000Z",
+              "dateModified": "2026-10-31T00:00:00.000Z",
+              "keywords": [
+                "Alina Habba",
+                "Politics",
+                "Alina Habba career",
+                "Alina Habba controversy",
+                "Alina Habba professional career",
+                "Stephen M. Knowles"
+              ]
+            }),
+          }}
+        />
+        <ClientS4 />
+      </main>
+    </>
+  );
+}
     if (slug === 'bancredito-receivership-transparency-dispute') {
       return (
         <>

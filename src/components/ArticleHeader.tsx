@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
-import { BiCalendar } from 'react-icons/bi';
+import { FaFacebookF, FaInstagram } from './Icons';
+import { FaXTwitter } from './Icons';
+import { BiCalendar } from './Icons';
 
 interface ArticleHeaderProps {
   category: string;

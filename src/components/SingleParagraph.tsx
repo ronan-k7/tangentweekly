@@ -32,7 +32,7 @@ const SingleParagraph: React.FC<SingleParagraphProps> = ({ text }) => {
             fontSize: '18px',
             fontFamily: "'Merriweather', serif",
             fontWeight: 400,
-            marginBottom: '1.5rem',
+            marginBottom: '1.25rem',
             padding: index === 2 ? '12px 16px' : '0',
             borderLeft: index === 2 ? '4px solid #4C6375' : undefined, 
             backgroundColor: index === 2 ? '#F1F4F7' : undefined, 

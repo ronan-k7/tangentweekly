@@ -31,10 +31,8 @@ const ClientS4 = () => {
           margin: '0 auto',
         }}
       >
-
         {/* Main Editorial Heading */}
         <header>
-
           <div
             className="article-heading-grid"
             style={{
@@ -45,7 +43,6 @@ const ClientS4 = () => {
               paddingBottom: '32px',
             }}
           >
-
             {/* Left: Headline */}
             <div>
               <div
@@ -63,6 +60,7 @@ const ClientS4 = () => {
               </div>
 
               <h1
+                className="alina-article-title"
                 style={{
                   fontFamily: 'Georgia, Times New Roman, serif',
                   fontSize: 'clamp(32px, 4vw, 45px)',
@@ -97,7 +95,6 @@ const ClientS4 = () => {
                   marginBottom: '12px',
                 }}
               >
-           
               </span>
 
               <p
@@ -154,7 +151,6 @@ const ClientS4 = () => {
               <span>October 31, 2026</span>
 
               <span style={{ color: '#ccc' }}>|</span>
-
             </div>
 
             {/* Social Sharing */}
@@ -281,6 +277,13 @@ const ClientS4 = () => {
           .article-heading-grid {
             grid-template-columns: 1fr !important;
             gap: 22px !important;
+          }
+
+          /* Reduce headline size on mobile only */
+          .alina-article-title {
+            font-size: 28px !important;
+            line-height: 1.12 !important;
+            letter-spacing: -0.5px !important;
           }
         }
       `}</style>

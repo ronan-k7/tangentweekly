@@ -230,6 +230,171 @@ export const AlinaHababContent: React.FC = () => {
           </p>
         </div>
 
+        {/* Editorial Timeline Section */}
+        <div
+          className="alina-editorial-timeline"
+          style={{
+            maxWidth: '820px',
+            margin: '2.5rem auto 0',
+            padding: '1.6rem',
+            backgroundColor: '#fafafa',
+            border: '1px solid #d0d0d0',
+            borderTop: '3px solid #1c1c1c',
+            borderBottom: '3px solid #1c1c1c',
+            boxSizing: 'border-box',
+          }}
+        >
+          {/* Heading */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              marginBottom: '22px',
+              paddingBottom: '14px',
+              borderBottom: '1px solid #dedede',
+            }}
+          >
+            <h3
+              style={{
+                fontFamily: "'Merriweather', Georgia, serif",
+                fontSize: '23px',
+                fontWeight: 700,
+                color: '#1c1c1c',
+                margin: 0,
+              }}
+            >
+              Timeline
+            </h3>
+
+            <span
+              style={{
+                fontFamily: "'Rubik', Arial, sans-serif",
+                fontSize: '10px',
+                fontWeight: 600,
+                letterSpacing: '1.5px',
+                color: '#777',
+                textTransform: 'uppercase',
+              }}
+            >
+              Key Events
+            </span>
+          </div>
+
+          {/* Timeline Items */}
+          <div className="alina-timeline-list">
+            {[
+              {
+                date: '2024',
+                text: 'Habba reportedly first met and worked with the Herrera banking interests, before entering public service.',
+              },
+              {
+                date: 'December 2025',
+                text: 'Her public service concluded and that she began considering a different professional future. A reported Friday-afternoon call to the family on [date?]',
+              },
+              {
+                date: 'January 2026',
+                text: 'President Trump pardoned Julio Herrera Velutini.',
+              },
+              {
+                date: 'February 26, 2026',
+                text: "A reported business lunch with Julio Herrera Velutini, family members and advisers took place at the family’s London headquarters.",
+              },
+              {
+                date: 'Approximately March 23, 2026',
+                text: 'Twenty-five days later—Habba reportedly requested another London meeting and discussed her divorce and relationship with Turhan Mildon. The relationship led to an engagement and a wedding celebration reportedly estimated at about $10 million.',
+              },
+              {
+                date: 'October 31, 2026',
+                text: 'Trump publicly criticized the reported compensation agreement at Mar-a-Lago.',
+              },
+            ].map((item, index, arr) => (
+              <div
+                key={index}
+                className="alina-timeline-item"
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '24px 1fr',
+                  gap: '15px',
+                  position: 'relative',
+                  paddingBottom: index === arr.length - 1 ? '0' : '22px',
+                }}
+              >
+                {/* Timeline Line and Marker */}
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    position: 'relative',
+                  }}
+                >
+                  <span
+                    style={{
+                      width: '12px',
+                      height: '12px',
+                      borderRadius: '50%',
+                      backgroundColor: '#1c1c1c',
+                      border: '2px solid #fafafa',
+                      outline: '1px solid #999',
+                      marginTop: '4px',
+                      zIndex: 2,
+                      flexShrink: 0,
+                    }}
+                  />
+
+                  {index !== arr.length - 1 && (
+                    <span
+                      style={{
+                        position: 'absolute',
+                        top: '17px',
+                        bottom: '-22px',
+                        width: '1px',
+                        backgroundColor: '#bdbdbd',
+                      }}
+                    />
+                  )}
+                </div>
+
+                {/* Timeline Content */}
+                <div
+                  style={{
+                    backgroundColor: '#fff',
+                    border: '1px solid #e2e2e2',
+                    padding: '13px 16px',
+                    boxSizing: 'border-box',
+                  }}
+                >
+                  <h4
+                    style={{
+                      fontFamily: "'Rubik', Arial, sans-serif",
+                      fontSize: '14px',
+                      fontWeight: 700,
+                      color: '#202020',
+                      margin: '0 0 8px',
+                      letterSpacing: '0.3px',
+                    }}
+                  >
+                    {item.date}
+                  </h4>
+
+                  <p
+                    style={{
+                      fontFamily: "'Merriweather', Georgia, serif",
+                      fontSize: '13px',
+                      lineHeight: 1.8,
+                      color: '#444',
+                      margin: 0,
+                      textAlign: 'left',
+                    }}
+                  >
+                    {item.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
 
     </>

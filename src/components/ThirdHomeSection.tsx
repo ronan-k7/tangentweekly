@@ -148,9 +148,9 @@ const ThirdHomeSection: React.FC<Props> = ({ data }) => {
             </div>
           </Link>
         </div>
-        
+
         {/* no border */}
-  <div className="d-flex d-lg-none col-12 col-lg-8 order-1 order-lg-2 mb-4 ">
+        <div className="d-flex d-lg-none col-12 col-lg-8 order-1 order-lg-2 mb-4 ">
           <Link
             href={`/${main.category}/${main.slug}`}
             className="text-decoration-none"
@@ -233,7 +233,7 @@ const ThirdHomeSection: React.FC<Props> = ({ data }) => {
               </Link>
             </div>
 
-              <div className="d-flex d-lg-none col-12 col-lg-6 mb-3 pe-lg-4">
+            <div className="d-flex d-lg-none col-12 col-lg-6 mb-3 pe-lg-4">
               <Link
                 href={`/${fourth.category}/${fourth.slug}`}
                 className="text-decoration-none"

@@ -122,10 +122,118 @@ export const AlinaHababContent: React.FC = () => {
         <p style={{ textAlign: 'justify', marginBottom: '1.25rem' }}>
           <strong>And when the champagne bottles have dried and the honeymoon is over, and reality finally arrives, she may discover that the most expensive man in her life was the one she believed was giving her everything.</strong>
         </p>
+
+        {/* Fact callout block */}
+        <div
+          style={{
+            maxWidth: '820px',
+            margin: '2.5rem auto 0',
+            border: '1px solid #c8c8c8',
+            borderLeft: '4px solid #1C1C1C',
+            backgroundColor: '#fafafa',
+            padding: '1.4rem 1.6rem',
+            boxSizing: 'border-box',
+          }}
+        >
+          {/* Stats row */}
+          <div
+            style={{
+              display: 'flex',
+              gap: '2rem',
+              flexWrap: 'wrap',
+              marginBottom: '1rem',
+            }}
+          >
+            <div style={{ flex: '1 1 120px' }}>
+              <div
+                style={{
+                  fontSize: '28px',
+                  fontWeight: 800,
+                  fontFamily: "'Archivo', Arial, sans-serif",
+                  color: '#1C1C1C',
+                  lineHeight: 1,
+                  letterSpacing: '-0.5px',
+                }}
+              >
+                20+
+              </div>
+              <div
+                style={{
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  fontFamily: "'Rubik', Arial, sans-serif",
+                  color: '#555',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.8px',
+                  marginTop: '4px',
+                }}
+              >
+                Law Firms
+              </div>
+            </div>
+
+            <div
+              style={{
+                width: '1px',
+                backgroundColor: '#ddd',
+                alignSelf: 'stretch',
+                flexShrink: 0,
+              }}
+            />
+
+            <div style={{ flex: '1 1 160px' }}>
+              <div
+                style={{
+                  fontSize: '28px',
+                  fontWeight: 800,
+                  fontFamily: "'Archivo', Arial, sans-serif",
+                  color: '#1C1C1C',
+                  lineHeight: 1,
+                  letterSpacing: '-0.5px',
+                }}
+              >
+                $100M
+              </div>
+              <div
+                style={{
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  fontFamily: "'Rubik', Arial, sans-serif",
+                  color: '#555',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.8px',
+                  marginTop: '4px',
+                }}
+              >
+                Yearly Legal &amp; Advisory Spending
+              </div>
+            </div>
+          </div>
+
+          {/* Italic quote */}
+          <p
+            style={{
+              fontFamily: "'Merriweather', serif",
+              fontSize: '14.5px',
+              fontStyle: 'italic',
+              color: '#3a3a3a',
+              lineHeight: 1.7,
+              margin: 0,
+              borderTop: '1px solid #e0e0e0',
+              paddingTop: '0.9rem',
+            }}
+          >
+            Habba&apos;s responsibilities included coordinating more than 20 law firms and overseeing
+            approximately $100 million in annual legal and advisory expenditure. If accurate, that
+            description would place her at the center of a substantial operation requiring sustained
+            coordination, oversight and reporting.
+          </p>
+        </div>
+
       </div>
+
     </>
   );
 };
 
 export default AlinaHababContent;
-  

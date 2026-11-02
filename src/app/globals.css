@@ -396,3 +396,30 @@ a {
     text-align: start;
   }
 }
+
+
+/* =====================================================
+   MOBILE STICKY OVERRIDE (<992px = Bootstrap lg break)
+   Forces all JS-set sticky inline styles back to normal
+   so sidebar columns stack naturally on small screens.
+   ===================================================== */
+@media (max-width: 991.98px) {
+  /* Sidebar inner wrapper - clear fixed/absolute positioning */
+  .col-12.col-lg-3[style],
+  .col-12.col-lg-9[style] {
+    height: auto !important;
+  }
+
+  /* Any element that JS puts into fixed/absolute for sticky */
+  .col-12.col-lg-3 > div[style*="position"] {
+    position: relative !important;
+    top: auto !important;
+    width: 100% !important;
+  }
+
+  /* Sidebar column height reset */
+  .col-lg-3[style*="height"],
+  .col-lg-9[style*="height"] {
+    height: auto !important;
+  }
+}

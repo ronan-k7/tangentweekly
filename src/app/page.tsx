@@ -58,6 +58,15 @@ export default function Home() {
     let naturalWidth = sidebarColEl.offsetWidth;
     let lastState = '';
     const handleScroll = () => {
+      // No sticky on mobile (<992px) - reset all inline styles and bail
+      if (window.innerWidth < 992) {
+        sidebarColEl.style.height = '';
+        sidebarEl.style.position = '';
+        sidebarEl.style.top = '';
+        sidebarEl.style.width = '';
+        lastState = 'mobile';
+        return;
+      }
       const contentRect = contentEl.getBoundingClientRect();
       const sidebarHeight = sidebarEl.offsetHeight;
       const contentHeight = contentEl.offsetHeight;
@@ -67,7 +76,6 @@ export default function Home() {
       if (contentTop > TOP_OFFSET) {
         if (lastState !== 'natural') {
           lastState = 'natural';
-          // Re-capture natural width after any resize
           naturalWidth = sidebarColEl.offsetWidth;
           sidebarColEl.style.height = '';
           sidebarEl.style.position = 'relative';
@@ -124,6 +132,15 @@ export default function Home() {
     let naturalWidth = sidebarColEl.offsetWidth;
     let lastState = '';
     const handleScroll = () => {
+      // No sticky on mobile (<992px) - reset all inline styles and bail
+      if (window.innerWidth < 992) {
+        sidebarColEl.style.height = '';
+        sidebarEl.style.position = '';
+        sidebarEl.style.top = '';
+        sidebarEl.style.width = '';
+        lastState = 'mobile';
+        return;
+      }
       const contentRect = contentEl.getBoundingClientRect();
       const sidebarHeight = sidebarEl.offsetHeight;
       const contentHeight = contentEl.offsetHeight;
@@ -133,7 +150,6 @@ export default function Home() {
       if (contentTop > topOffset) {
         if (lastState !== 'natural') {
           lastState = 'natural';
-          // Re-capture natural width after any resize
           naturalWidth = sidebarColEl.offsetWidth;
           sidebarColEl.style.height = '';
           sidebarEl.style.position = 'relative';

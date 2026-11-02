@@ -1,4 +1,4 @@
-
+﻿
 'use client';
 
 import React from 'react';
@@ -266,7 +266,7 @@ const ClientS4 = () => {
           </h2>
 
           <EditorsPicksSection
-            data={politicalData.slice(1, 10)}
+            data={politicalData.slice(2, 11)}
           />
         </section>
       </div>

@@ -49,9 +49,19 @@ export default function CategoryContent({ activeMain, data }: Props) {
     if (!contentEl || !sidebarEl || !sidebarColEl) return () => {};
 
     // Track last state to avoid redundant style writes
+    let naturalWidth = sidebarColEl.offsetWidth;
     let lastState = '';
 
     const handleScroll = () => {
+      // No sticky on mobile (<992px) - unconditionally reset and bail
+      if (window.innerWidth < 992) {
+        sidebarColEl.style.height = '';
+        sidebarEl.style.position = '';
+        sidebarEl.style.top = '';
+        sidebarEl.style.width = '';
+        lastState = 'mobile';
+        return;
+      }
       const contentRect = contentEl.getBoundingClientRect();
       const sidebarHeight = sidebarEl.offsetHeight;
       const contentHeight = contentEl.offsetHeight;
@@ -62,6 +72,8 @@ export default function CategoryContent({ activeMain, data }: Props) {
         // Natural - not yet sticky. Column height = auto (no size change to card)
         if (lastState !== 'natural') {
           lastState = 'natural';
+          // Re-capture natural width after resize
+          naturalWidth = sidebarColEl.offsetWidth;
           sidebarColEl.style.height = '';
           sidebarEl.style.position = 'relative';
           sidebarEl.style.top = '';
@@ -75,7 +87,7 @@ export default function CategoryContent({ activeMain, data }: Props) {
         }
         sidebarEl.style.position = 'fixed';
         sidebarEl.style.top = topOffset + 'px';
-        sidebarEl.style.width = sidebarColEl.offsetWidth + 'px';
+        sidebarEl.style.width = naturalWidth + 'px';
       } else {
         // Released - anchor to bottom of content column, scrolls away naturally
         if (lastState !== 'absolute') {
@@ -84,7 +96,7 @@ export default function CategoryContent({ activeMain, data }: Props) {
         }
         sidebarEl.style.position = 'absolute';
         sidebarEl.style.top = (contentHeight - sidebarHeight) + 'px';
-        sidebarEl.style.width = '100%';
+        sidebarEl.style.width = naturalWidth + 'px';
       }
     };
 

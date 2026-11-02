@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import AuthorInfo from "./AuthorInfo";
@@ -21,141 +21,141 @@ function formatCategoryName(text: string) {
 const ClientS5 = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 mb-5">
-     <div
-  style={{
-    padding: "0.5rem 0",
-    borderBottom: "2px solid #000",
-  }}
->
-  {/* Main Headline */}
-  <h1
-    className="fw-bold fst-italic"
-    style={{
-      fontSize: "clamp(28px, 5vw, 42px)",
-      fontFamily: "'Archivo', Arial, sans-serif",
-      fontWeight: 900,
-      color: "#1b1214d7",
-      lineHeight: 1.2,
-      fontStyle: "italic",
-      marginBottom: "6px",
-    }}
-  >
-    The Vanity of Alina Habba Mildon
-  </h1>
-
-  {/* Short Description */}
-  <p
-    style={{
-      fontFamily: "Georgia, 'Times New Roman', serif",
-      fontSize: "clamp(15px, 2vw, 18px)",
-      fontWeight: 400,
-      fontStyle: "italic",
-      color: "#666",
-      lineHeight: 1.35,
-      marginTop: "0",
-      marginBottom: "10px",
-      maxWidth: "950px",
-    }}
-  >
-    Beauty, Power, Ambition and the Price of Loyalty: From the White House to
-    the Herrera Velutini Banking Dynasty
-  </p>
-
-  {/* Publication Date and Social Links */}
-  <div
-    className="d-flex justify-content-between align-items-center flex-nowrap w-100 mt-0"
-    style={{
-      gap: "0.5rem",
-      flexWrap: "nowrap",
-    }}
-  >
-    {/* Published Date */}
-    <div
-      className="d-flex align-items-center"
-      style={{
-        fontSize: "10px",
-        fontWeight: 400,
-        fontFamily: "'Rubik', Arial, sans-serif",
-        whiteSpace: "nowrap",
-        overflow: "hidden",
-        textOverflow: "ellipsis",
-      }}
-    >
-      <BiCalendar
-        size={12}
+      <div
         style={{
-          marginRight: "5px",
-          color: "#000",
-        }}
-      />
-
-      <span style={{ color: "#000", opacity: 0.6 }}>
-        Published on
-      </span>
-
-      <span
-        style={{
-          color: "#555",
-          marginLeft: "4px",
-          fontWeight: 500,
+          padding: "0.5rem 0",
+          borderBottom: "2px solid #000",
         }}
       >
-        2 Nov 2026
-      </span>
-    </div>
+        {/* Main Headline */}
+        <h1
+          className="fw-bold fst-italic"
+          style={{
+            fontSize: "clamp(28px, 5vw, 42px)",
+            fontFamily: "'Archivo', Arial, sans-serif",
+            fontWeight: 900,
+            color: "#1b1214d7",
+            lineHeight: 1.2,
+            fontStyle: "italic",
+            marginBottom: "6px",
+          }}
+        >
+          The Vanity of Alina Habba Mildon
+        </h1>
 
-    {/* Social Media Icons */}
-    <div className="d-flex gap-2 flex-shrink-0">
-      {/* X */}
-      <a
-        href="https://x.com/TangentWeekly"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Visit our Twitter page"
-        className="social-icon-btn"
-        style={{
-          width: "36px",
-          height: "36px",
-          fontSize: "14px",
-          border: "1px solid #ccc",
-          borderRadius: "50%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          color: "#222",
-          textDecoration: "none",
-          transition: "all 0.3s ease",
-        }}
-      >
-        <FaXTwitter />
-      </a>
+        {/* Short Description */}
+        <p
+          style={{
+            fontFamily: "Georgia, 'Times New Roman', serif",
+            fontSize: "clamp(15px, 2vw, 18px)",
+            fontWeight: 400,
+            fontStyle: "italic",
+            color: "#666",
+            lineHeight: 1.35,
+            marginTop: "0",
+            marginBottom: "10px",
+            maxWidth: "950px",
+          }}
+        >
+          Beauty, Power, Ambition and the Price of Loyalty: From the White House to
+          the Herrera Velutini Banking Dynasty
+        </p>
 
-      {/* Instagram */}
-      <a
-        href="https://www.instagram.com/tangentweekly/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Visit our Instagram page"
-        className="social-icon-btn"
-        style={{
-          width: "36px",
-          height: "36px",
-          fontSize: "14px",
-          border: "1px solid #ccc",
-          borderRadius: "50%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          color: "#222",
-          textDecoration: "none",
-          transition: "all 0.3s ease",
-        }}
-      >
-        <FaInstagram />
-      </a>
-    </div>
-  </div>
-</div>
+        {/* Publication Date and Social Links */}
+        <div
+          className="d-flex justify-content-between align-items-center flex-nowrap w-100 mt-0"
+          style={{
+            gap: "0.5rem",
+            flexWrap: "nowrap",
+          }}
+        >
+          {/* Published Date */}
+          <div
+            className="d-flex align-items-center"
+            style={{
+              fontSize: "10px",
+              fontWeight: 400,
+              fontFamily: "'Rubik', Arial, sans-serif",
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
+            <BiCalendar
+              size={12}
+              style={{
+                marginRight: "5px",
+                color: "#000",
+              }}
+            />
+
+            <span style={{ color: "#000", opacity: 0.6 }}>
+              Published on
+            </span>
+
+            <span
+              style={{
+                color: "#555",
+                marginLeft: "4px",
+                fontWeight: 500,
+              }}
+            >
+              2 Nov 2026
+            </span>
+          </div>
+
+          {/* Social Media Icons */}
+          <div className="d-flex gap-2 flex-shrink-0">
+            {/* X */}
+            <a
+              href="https://x.com/TangentWeekly"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit our Twitter page"
+              className="social-icon-btn"
+              style={{
+                width: "36px",
+                height: "36px",
+                fontSize: "14px",
+                border: "1px solid #ccc",
+                borderRadius: "50%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "#222",
+                textDecoration: "none",
+                transition: "all 0.3s ease",
+              }}
+            >
+              <FaXTwitter />
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/tangentweekly/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit our Instagram page"
+              className="social-icon-btn"
+              style={{
+                width: "36px",
+                height: "36px",
+                fontSize: "14px",
+                border: "1px solid #ccc",
+                borderRadius: "50%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "#222",
+                textDecoration: "none",
+                transition: "all 0.3s ease",
+              }}
+            >
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
+      </div>
 
       <div className="d-flex justify-content-center mt-3">
         <div className="col-md-10">
@@ -181,7 +181,7 @@ const ClientS5 = () => {
             }}
             className="text-block"
           >
-           
+
             <p>
               Alina Habba was once a symbol of beauty, power and strength. A
               woman of remarkable determination, political influence and
@@ -313,8 +313,7 @@ const ClientS5 = () => {
               company associated with Isabela Herrera, daughter of Julio Herrera
               Velutini. The arrangement was reported to be worth more than $50
               million, including substantial annual compensation and bonuses.
-              The reported contract had been signed in 2025, before the London
-              meetings described in the private account. Its size, timing and
+              Its size, timing and
               the political relationships surrounding it attracted growing
               attention.{" "}
             </p>
@@ -462,10 +461,102 @@ const ClientS5 = () => {
               surrounding Alina Habba Mildon: power can be acquired in a moment,
               but trust takes generations to build.{" "}
             </p>
+
+            {/* Fact callout block */}
+            <div
+              style={{
+                margin: '2.5rem 0 0',
+                border: '1px solid #c8c8c8',
+                borderLeft: '4px solid #1C1C1C',
+                backgroundColor: '#fafafa',
+                padding: '1.4rem 1.6rem',
+                boxSizing: 'border-box',
+              }}
+            >
+              {/* Stats row */}
+              <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                <div style={{ flex: '1 1 120px' }}>
+                  <div
+                    style={{
+                      fontSize: '28px',
+                      fontWeight: 800,
+                      fontFamily: "'Archivo', Arial, sans-serif",
+                      color: '#1C1C1C',
+                      lineHeight: 1,
+                      letterSpacing: '-0.5px',
+                    }}
+                  >
+                    20+
+                  </div>
+                  <div
+                    style={{
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      fontFamily: "'Rubik', Arial, sans-serif",
+                      color: '#555',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.8px',
+                      marginTop: '4px',
+                    }}
+                  >
+                    Law Firms
+                  </div>
+                </div>
+
+                <div style={{ width: '1px', backgroundColor: '#ddd', alignSelf: 'stretch', flexShrink: 0 }} />
+
+                <div style={{ flex: '1 1 160px' }}>
+                  <div
+                    style={{
+                      fontSize: '28px',
+                      fontWeight: 800,
+                      fontFamily: "'Archivo', Arial, sans-serif",
+                      color: '#1C1C1C',
+                      lineHeight: 1,
+                      letterSpacing: '-0.5px',
+                    }}
+                  >
+                    $100M
+                  </div>
+                  <div
+                    style={{
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      fontFamily: "'Rubik', Arial, sans-serif",
+                      color: '#555',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.8px',
+                      marginTop: '4px',
+                    }}
+                  >
+                    Yearly Legal &amp; Advisory Spending
+                  </div>
+                </div>
+              </div>
+
+              {/* Italic quote */}
+              <p
+                style={{
+                  fontFamily: "'Merriweather', serif",
+                  fontSize: '14.5px',
+                  fontStyle: 'italic',
+                  color: '#3a3a3a',
+                  lineHeight: 1.7,
+                  margin: 0,
+                  borderTop: '1px solid #e0e0e0',
+                  paddingTop: '0.9rem',
+                }}
+              >
+                Habba&apos;s responsibilities included coordinating more than 20 law firms and
+                overseeing approximately $100 million in annual legal and advisory expenditure.
+                If accurate, that description would place her at the center of a substantial
+                operation requiring sustained coordination, oversight and reporting.
+              </p>
+            </div>
           </div>
         </div>
 
-    
+
       </ArticleWrapper>
 
       <div style={{ marginBottom: "30px" }}>
@@ -490,7 +581,7 @@ const ClientS5 = () => {
           margin: "30px 0 40px 0",
         }}
       />
-      <EditorsPicksSection data={politicalData} />
+      <EditorsPicksSection data={politicalData.filter(a => a.slug !== 'the-vanity-of-alina-habba-mildon' && a.slug !== 'when-vanity-passion-and-poor-judgment-threaten-a-brilliant-career').slice(0, 3)} />
     </div>
   );
 };

@@ -33,3 +33,149 @@
 .articleRow {
   align-items: flex-start;
 }
+
+/* Alina Habba - Statistics Highlight Box */
+.alina-stats-box {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 35px 0;
+  padding: 28px 30px;
+  background: #f8f5f2;
+  border: 1px solid #e6ddd7;
+  border-top: 4px solid #791c2b;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+}
+
+.alina-stats-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.alina-stats-label {
+  color: #791c2b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.alina-stats-line {
+  flex: 1;
+  height: 1px;
+  background: #d9c9c0;
+}
+
+.alina-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.alina-stat-item h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: fifty;
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 800;
+  color: #791c2b;
+  margin: 0 0 12px;
+  letter-spacing: -2px;
+}
+
+.alina-stat-item h3 span {
+  color: #b58a51;
+}
+
+.alina-stat-item p {
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #292323;
+  margin: 0 0 9px;
+  text-align: left;
+}
+
+.alina-stat-description {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #69615d;
+}
+
+.alina-stat-divider {
+  width: 1px;
+  height: 100%;
+  min-height: 100px;
+  background: #ded2ca;
+}
+
+.alina-stats-footer {
+  margin-top: 24px;
+  padding-top: 17px;
+  border-top: 1px solid #e2d8d1;
+  color: #504642;
+  font-size: 13px;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+  .alina-stats-box {
+    margin: 25px 0;
+    padding: 20px 17px;
+  }
+
+  .alina-stats-header {
+    margin-bottom: 20px;
+  }
+
+  .alina-stats-label {
+    font-size: 9px;
+    letter-spacing: 1.3px;
+  }
+
+  .alina-stats-grid {
+    gap: 12px;
+  }
+
+  .alina-stat-item h3 {
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+
+  .alina-stat-item p {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+  }
+
+  .alina-stat-description {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .alina-stats-footer {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
+
+.noGutter {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.articleRow {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.articleRow [data-article-content] {
+  margin-left: auto;
+  margin-right: auto;
+}

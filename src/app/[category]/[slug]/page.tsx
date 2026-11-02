@@ -11,6 +11,8 @@
   import ArticleHeader from '@/components/ArticleHeader';
   import DetailFirstSection from '@/components/DetailFirstSection';
   import MostPopularList from '@/components/MostPopularlist';
+  import RelatedNewsSidebar from '@/components/RelatedNewsSidebar';
+import ArticleSidebarSticky from '@/components/ArticleSidebarSticky';
   import SingleParagraph from '@/components/SingleParagraph';
   import EditorsPicksSection from '@/components/EditorsPick';
   import Script from "next/script";
@@ -22,6 +24,8 @@ import NavigationSection from '@/components/NavigationSection';
 import ClientS2 from '@/components/ClientS2';
 import ClientS3 from '@/components/ClientS3';
 import ClientS4 from '@/components/ClientS4';
+import ClientS5 from '@/components/ClientS5';
+
 
   type Article = {
     category: string;
@@ -452,7 +456,16 @@ import ClientS4 from '@/components/ClientS4';
       return <div className="p-4">No article found for slug: {slug}</div>;
     }
 
-    const relatedArticles = articles.filter((a) => a.slug !== slug);
+    // Same-category articles (excluding current), then fill from others to get at least 8
+    const sameCatArticles = articles.filter((a) => a.slug !== slug);
+    const allOtherArticles = [
+      ...politicsData, ...businessData, ...technologyData, ...sportsData,
+      ...scienceData, ...healthData, ...educationData, ...entertainmentData,
+      ...puertoRicoData, ...bancreditoData,
+    ].filter((a) => a.slug !== slug && a.category !== category);
+    const usedSlugs = new Set(sameCatArticles.map((a) => a.slug));
+    const fillArticles = allOtherArticles.filter((a) => !usedSlugs.has(a.slug));
+    const relatedArticles = [...sameCatArticles, ...fillArticles];
 
     if(slug === 'natalia-zequeira-ocif-investigation-nodus-ultra-vires-claims'){
    
@@ -571,6 +584,60 @@ import ClientS4 from '@/components/ClientS4';
         </>
       );
     }
+    if (slug === 'the-vanity-of-alina-habba-mildon') {
+      return (
+        <>
+          <SecondHeader />
+          <NavigationSection />
+          <main className={`container ${styles.content}`}>
+            <Script type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "NewsArticle",
+                  "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": `https://www.tangentweekly.com/${category}/${slug}/`
+                  },
+                  "headline": "Bancrédito Case Highlights Risks of Receivership Oversight",
+                  "description": "The Bancrédito receivership case illustrates how winding down a bank can evolve from a routine regulatory action into a complex legal dispute.",
+                  "image": "https://www.tangentweekly.com/images/bancredito-receivership-transparency-dispute.webp",
+                  "author": {
+                    "@type": "Person",
+                    "name": "Daniel C. Smith",
+                    "url": "https://x.com/Da_niel_Smith"
+                  },
+                  "publisher": {
+                    "@type": "Organization",
+                    "name": "Tangent Weekly",
+                    "logo": {
+                      "@type": "ImageObject",
+                      "url": "https://www.tangentweekly.com/images/tangent-weekly-logo.webp"
+                    }
+                  },
+                  "about": [
+                    {
+                      "@type": "Person",
+                      "name": "Ryan Marin",
+                      "alternateName": "Ryan Marn",
+                      "jobTitle": "Financial Expert",
+                      "worksFor": {
+                        "@type": "Organization",
+                        "name": "Bancrédito International Bank",
+                        "location": "Puerto Rico"
+                      }
+                    }
+                  ],
+                  "datePublished": "2025-09-17T00:00:00.000Z",
+                  "dateModified": "2025-09-17T00:00:00.000Z"
+                }),
+              }}
+            />
+            <ClientS5 />
+          </main>
+        </>
+      );
+    }
    
   
 
@@ -639,8 +706,8 @@ import ClientS4 from '@/components/ClientS4';
                 image={article.image}
                 shortdescription={article.shortdescription}
               />
-              <div className="row mt-4">
-                <div className="col-12 col-lg-8 mb-3 mb-lg-0">
+              <div className={`row mt-4 justify-content-between ${styles.articleRow}`}>
+                <div className="col-12 col-lg-8 col-xl-8 mb-3 mb-lg-0 pe-lg-4" data-article-content="">
                   <SingleParagraph text={article.description ?? ''} />
                   <div style={{ marginBottom: '30px', marginTop: '30px' }}>
 
@@ -655,10 +722,7 @@ import ClientS4 from '@/components/ClientS4';
 
                 </div>
                 
-                <div className="col-12 col-lg-4">
-                  <MostPopularList data={relatedArticles} />
-                  {/* <LatestNewsCard data={relatedArticles} /> */}
-                </div>
+                <ArticleSidebarSticky data={relatedArticles} category={category} />
               </div>
               <hr
                     style={{

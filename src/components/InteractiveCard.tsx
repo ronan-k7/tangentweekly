@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BiCalendar } from 'react-icons/bi';
+import { BiCalendar } from './Icons';
 
 interface InteractiveCardProps {
   data: {
@@ -41,13 +41,13 @@ const InteractiveCard: React.FC<InteractiveCardProps> = ({ data }) => {
           <div
             style={{
               position: 'absolute',
-              bottom: '-15px',
+              bottom: '-12px',
               left: '50%',
               transform: 'translateX(-50%)',
               backgroundColor: '#000',
               color: '#fff',
-              padding: '6px 18px',
-              fontSize: '0.65rem',
+              padding: '5px 16px',
+              fontSize: '0.62rem',
               fontWeight: 'bold',
               letterSpacing: '2px',
               textTransform: 'uppercase',
@@ -57,29 +57,33 @@ const InteractiveCard: React.FC<InteractiveCardProps> = ({ data }) => {
           </div>
         </div>
 
-        <div style={{ padding: '2rem 1rem 1rem', textAlign: 'center' }}>
+        {/* Reduced padding-top, smaller title, tighter spacing */}
+        <div style={{ padding: '1.2rem 1rem 0.8rem', textAlign: 'center' }}>
           <h2 style={{
-            fontSize: '18px',
-            fontWeight: 'bold', marginBottom: '1rem', color: "#111111", lineHeight: 1.2,
+            fontSize: '15px',
+            fontWeight: 'bold',
+            marginBottom: '0.4rem',
+            color: "#111111",
+            lineHeight: 1.2,
             display: 'inline-block',
           }}>{data.title}</h2>
           <hr
             style={{
-
-              width: '40px',
-              margin: '0 auto 1rem',
+              width: '35px',
+              margin: '0 auto 0.4rem',
               borderTop: '2px solid #ccc',
             }}
           />
           <p
             style={{
-              fontSize: '0.95rem',
+              fontSize: '0.88rem',
               color: '#333',
               display: '-webkit-box',
               WebkitLineClamp: 2,
               WebkitBoxOrient: 'vertical',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
+              marginBottom: '0.4rem',
             }}
           >
             {data.shortdescription}

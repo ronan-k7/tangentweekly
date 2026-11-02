@@ -1,5 +1,6 @@
-'use client';
+﻿'use client';
 
+import React, { useRef, useEffect, useState } from 'react';
 import NavigationSection from '@/components/NavigationSection';
 import FirstHomeSection from '@/components/FirstHomeSection';
 import SecondHomeSection from '@/components/SecondHomeSection';
@@ -39,6 +40,169 @@ const parseDate = (dateStr: string) => {
 };
 
 export default function Home() {
+  // Sticky Most Popular sidebar - direct DOM refs (no state = no re-render jitter)
+  const contentColRef = useRef<HTMLDivElement>(null);
+  const sidebarRef = useRef<HTMLDivElement>(null);
+  const sidebarColRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const TOP_OFFSET = 90;
+    const contentEl = contentColRef.current;
+    const sidebarEl = sidebarRef.current;
+    const sidebarColEl = sidebarColRef.current;
+    if (!contentEl || !sidebarEl || !sidebarColEl) return;
+
+
+    // Direct DOM sticky - column height only set when sticky activates (no upfront resize = no card jump)
+    // Capture natural width once so card never reflows on sticky activation
+    let naturalWidth = sidebarColEl.offsetWidth;
+    let lastState = '';
+    const handleScroll = () => {
+      const contentRect = contentEl.getBoundingClientRect();
+      const sidebarHeight = sidebarEl.offsetHeight;
+      const contentHeight = contentEl.offsetHeight;
+      const contentBottom = contentRect.bottom;
+      const contentTop = contentRect.top;
+
+      if (contentTop > TOP_OFFSET) {
+        if (lastState !== 'natural') {
+          lastState = 'natural';
+          // Re-capture natural width after any resize
+          naturalWidth = sidebarColEl.offsetWidth;
+          sidebarColEl.style.height = '';
+          sidebarEl.style.position = 'relative';
+          sidebarEl.style.top = '';
+          sidebarEl.style.width = '';
+        }
+      } else if (contentBottom > sidebarHeight + TOP_OFFSET) {
+        if (lastState !== 'fixed') {
+          lastState = 'fixed';
+          sidebarColEl.style.height = contentHeight + 'px';
+        }
+        sidebarEl.style.position = 'fixed';
+        sidebarEl.style.top = TOP_OFFSET + 'px';
+        sidebarEl.style.width = naturalWidth + 'px';
+      } else {
+        if (lastState !== 'absolute') {
+          lastState = 'absolute';
+          sidebarColEl.style.height = contentHeight + 'px';
+        }
+        sidebarEl.style.position = 'absolute';
+        sidebarEl.style.top = (contentHeight - sidebarHeight) + 'px';
+        sidebarEl.style.width = naturalWidth + 'px';
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+
+  // Trending card sticky refs (sports, business rows)
+  const sportsContentRef = useRef<HTMLDivElement>(null);
+  const sportsSidebarRef = useRef<HTMLDivElement>(null);
+  const sportsSidebarColRef = useRef<HTMLDivElement>(null);
+  const bizContentRef = useRef<HTMLDivElement>(null);
+  const bizSidebarRef = useRef<HTMLDivElement>(null);
+  const bizSidebarColRef = useRef<HTMLDivElement>(null);
+
+  // Reusable sticky setup function
+  const setupSticky = (
+    contentEl: HTMLDivElement | null,
+    sidebarEl: HTMLDivElement | null,
+    sidebarColEl: HTMLDivElement | null,
+    topOffset = 90
+  ) => {
+    if (!contentEl || !sidebarEl || !sidebarColEl) return () => {};
+
+    // Capture natural width once so card never reflows on sticky activation
+    let naturalWidth = sidebarColEl.offsetWidth;
+    let lastState = '';
+    const handleScroll = () => {
+      const contentRect = contentEl.getBoundingClientRect();
+      const sidebarHeight = sidebarEl.offsetHeight;
+      const contentHeight = contentEl.offsetHeight;
+      const contentBottom = contentRect.bottom;
+      const contentTop = contentRect.top;
+
+      if (contentTop > topOffset) {
+        if (lastState !== 'natural') {
+          lastState = 'natural';
+          // Re-capture natural width after any resize
+          naturalWidth = sidebarColEl.offsetWidth;
+          sidebarColEl.style.height = '';
+          sidebarEl.style.position = 'relative';
+          sidebarEl.style.top = '';
+          sidebarEl.style.width = '';
+        }
+      } else if (contentBottom > sidebarHeight + topOffset) {
+        if (lastState !== 'fixed') {
+          lastState = 'fixed';
+          sidebarColEl.style.height = contentHeight + 'px';
+        }
+        sidebarEl.style.position = 'fixed';
+        sidebarEl.style.top = topOffset + 'px';
+        sidebarEl.style.width = naturalWidth + 'px';
+      } else {
+        if (lastState !== 'absolute') {
+          lastState = 'absolute';
+          sidebarColEl.style.height = contentHeight + 'px';
+        }
+        sidebarEl.style.position = 'absolute';
+        sidebarEl.style.top = (contentHeight - sidebarHeight) + 'px';
+        sidebarEl.style.width = naturalWidth + 'px';
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  };
+
+  // Politics + Health sticky refs
+  const polContentRef = useRef<HTMLDivElement>(null);
+  const polSidebarRef = useRef<HTMLDivElement>(null);
+  const polSidebarColRef = useRef<HTMLDivElement>(null);
+  const healthContentRef = useRef<HTMLDivElement>(null);
+  const healthSidebarRef = useRef<HTMLDivElement>(null);
+  const healthSidebarColRef = useRef<HTMLDivElement>(null);
+
+  // Wire up sticky for sports + business trending card sidebars
+  useEffect(() => {
+    const cleanupSports = setupSticky(
+      sportsContentRef.current,
+      sportsSidebarRef.current,
+      sportsSidebarColRef.current
+    );
+    const cleanupBiz = setupSticky(
+      bizContentRef.current,
+      bizSidebarRef.current,
+      bizSidebarColRef.current
+    );
+    const cleanupPol = setupSticky(
+      polContentRef.current,
+      polSidebarRef.current,
+      polSidebarColRef.current
+    );
+    const cleanupHealth = setupSticky(
+      healthContentRef.current,
+      healthSidebarRef.current,
+      healthSidebarColRef.current
+    );
+    return () => { cleanupSports(); cleanupBiz(); cleanupPol(); cleanupHealth(); };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const allNews = [
     ...BusinessData,
     ...EducationData,
@@ -250,8 +414,8 @@ export default function Home() {
             />
             <FirstHomeSection data={sortedNews.slice(3, 6)} />
           </div>
-          <div className="row">
-            <div className="col-12 col-lg-9">
+          <div className="row" style={{ alignItems: 'flex-start', position: 'relative' }}>
+            <div className="col-12 col-lg-9" ref={contentColRef}>
               <SecondHomeSection data={sortedNews.slice(6, 12)} />
 
               <div className="mb-5">
@@ -264,8 +428,10 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="col-12 col-lg-3">
-              <MostPopularList data={sortedNews.slice(23, 28)} />
+            <div className="col-12 col-lg-3" ref={sidebarColRef} style={{ position: 'relative' }}>
+              <div ref={sidebarRef}>
+                <MostPopularList data={sortedNews.slice(23, 28)} />
+              </div>
             </div>
           </div>
 
@@ -274,8 +440,8 @@ export default function Home() {
             <CarouselSection data={sortedNews.slice(28, 31)} />
           </div>
 
-          <div className="row">
-            <div className="col-12 col-lg-9">
+          <div className="row" style={{ alignItems: 'flex-start', position: 'relative' }}>
+            <div className="col-12 col-lg-9" ref={sportsContentRef}>
               <ContentLayout
                 data={{
                   main: sportsContent[0],
@@ -285,7 +451,8 @@ export default function Home() {
               />
             </div>
 
-            <div className="col-12 col-lg-3">
+            <div className="col-12 col-lg-3" ref={sportsSidebarColRef} style={{ position: 'relative' }}>
+              <div ref={sportsSidebarRef}>
               <TrendingCard
                 data={{
                   section: "",
@@ -299,12 +466,13 @@ export default function Home() {
                   })),
                 }}
               />
+              </div>
             </div>
           </div>
 
 
-          <div className="row">
-            <div className="col-12 col-lg-9">
+          <div className="row" style={{ alignItems: 'flex-start', position: 'relative' }}>
+            <div className="col-12 col-lg-9" ref={bizContentRef}>
               <ContentLayout
                 data={{
                   main: businessContent[0],
@@ -323,7 +491,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="col-12 col-lg-3">
+            <div className="col-12 col-lg-3" ref={bizSidebarColRef} style={{ position: 'relative' }}>
+              <div ref={bizSidebarRef}>
               <TrendingCard
                 data={{
                   section: "",
@@ -337,11 +506,12 @@ export default function Home() {
                   })),
                 }}
               />
+              </div>
             </div>
           </div>
 
-          <div className="row">
-            <div className="col-12 col-lg-9">
+          <div className="row" style={{ alignItems: 'flex-start', position: 'relative' }}>
+            <div className="col-12 col-lg-9" ref={polContentRef}>
               <ContentLayout
                 data={{
                   main: politicsContent[0],
@@ -350,16 +520,18 @@ export default function Home() {
                 }}
               />
             </div>
-            <div className="col-12 col-lg-3">
-              <EditorialBoard
-                sectionTitle={''}
-                data={politicsEditorial}
-              />
+            <div className="col-12 col-lg-3" ref={polSidebarColRef} style={{ position: 'relative' }}>
+              <div ref={polSidebarRef}>
+                <EditorialBoard
+                  sectionTitle={''}
+                  data={politicsEditorial}
+                />
+              </div>
             </div>
           </div>
 
-          <div className="row">
-            <div className="col-12 col-lg-9">
+          <div className="row" style={{ alignItems: 'flex-start', position: 'relative' }}>
+            <div className="col-12 col-lg-9" ref={healthContentRef}>
               <ContentLayout
                 data={{
                   main: healthContent[0],
@@ -376,9 +548,11 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="col-12 col-lg-3">
-              <NewsText data={healthColumns} />
-              <LottoCard data={healthLotto} />
+            <div className="col-12 col-lg-3" ref={healthSidebarColRef} style={{ position: 'relative' }}>
+              <div ref={healthSidebarRef}>
+                <NewsText data={healthColumns} />
+                <LottoCard data={healthLotto} />
+              </div>
             </div>
             <div className="col-12 col-lg-3">
             </div>

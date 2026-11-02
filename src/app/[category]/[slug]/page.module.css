@@ -10,6 +10,11 @@
   }
 }
 
+.noGutter {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .stickySidebar {
   position: static;
   width: 100%;
@@ -19,8 +24,12 @@
   .stickySidebar {
     position: sticky;
     top: 95px;
-    max-width: 305px;
     width: 100%;
     margin-left: auto;
   }
+}
+
+/* Sidebar column bounds sticky scroll to article content height */
+.articleRow {
+  align-items: flex-start;
 }

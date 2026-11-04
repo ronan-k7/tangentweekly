@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -61,6 +61,10 @@ export const metadata: Metadata = {
 
   icons: {
     icon: "/favicon.ico",
+  },
+
+  verification: {
+    google: "G-tke2hU8jDF8urM76V0wLbaOhCuuxBSzqSPaCrkqYE",
   },
 };
 

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import AuthorInfo from "./AuthorInfo";
@@ -461,6 +461,63 @@ const ClientS5 = () => {
               surrounding Alina Habba Mildon: power can be acquired in a moment,
               but trust takes generations to build.{" "}
             </p>
+
+            {/* Hashtag Keywords */}
+            <div
+              style={{
+                maxWidth: '820px',
+                margin: '1.25rem auto 0',
+                paddingTop: '1rem',
+                borderTop: '1px solid #e6e6e6',
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '8px',
+                justifyContent: 'flex-start',
+                boxSizing: 'border-box',
+              }}
+            >
+              {[
+                '#AlinaHabbaMildon',
+                '#AlinaHabba',
+                '#JulioHerreraVelutini',
+                '#HerreraVelutiniDynasty',
+                '#IsabelaHerrera',
+                '#ConcordPartners',
+                '#DonaldTrump',
+                '#PamBondi',
+                '#TurhanMildon',
+                '#TrumpOrganization',
+                '#USAttorneyNewJersey',
+                '#PresidentialPardon',
+                '#GeneralCounsel',
+                '#FamilyOffice',
+                '#PrivateBanking',
+                '#50MillionAgreement',
+                '#100MillionLegalSpending',
+                '#CityOfLondon',
+                '#MarALago',
+                '#Istanbul',
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  style={{
+                    fontFamily: "'Rubik', Arial, sans-serif",
+                    fontSize: '11.5px',
+                    fontWeight: 500,
+                    color: '#555555',
+                    backgroundColor: '#f5f5f5',
+                    border: '1px solid #e2e2e2',
+                    borderRadius: '3px',
+                    padding: '4px 10px',
+                    letterSpacing: '0.2px',
+                    lineHeight: 1.4,
+                    display: 'inline-block',
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
 
             {/* Fact callout block */}
             <div

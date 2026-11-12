@@ -2,6 +2,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 export const AlinaHababContent: React.FC = () => {
   return (
@@ -71,6 +72,50 @@ export const AlinaHababContent: React.FC = () => {
           <strong>Then came a younger man. And her priorities collapsed.</strong>
         </p>
 
+        <figure
+          style={{
+            margin: '2rem 0',
+            maxWidth: '100%',
+          }}
+        >
+          <div
+            style={{
+              position: 'relative',
+              width: '100%',
+              borderRadius: '4px',
+              overflow: 'hidden',
+              boxShadow: '0 4px 14px rgba(0, 0, 0, 0.08)',
+            }}
+          >
+            <Image
+              src="/images/alina-habba-legal-career-portrait.jpg"
+              alt="Alina Habba"
+              width={1024}
+              height={683}
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+                objectFit: 'cover',
+              }}
+            />
+          </div>
+          <figcaption
+            style={{
+              fontFamily: "'Rubik', Arial, sans-serif",
+              fontSize: '12px',
+              color: '#555',
+              lineHeight: 1.5,
+              marginTop: '8px',
+              textAlign: 'left',
+              paddingLeft: '6px',
+              borderLeft: '2px solid #a51d35',
+            }}
+          >
+            A symbol of beauty, power, and loyalty, Alina Habba established herself as a trusted counselor and influential legal advocate in Washington and international private finance.
+          </figcaption>
+        </figure>
+
         <p style={{ textAlign: 'justify', marginBottom: '1.25rem' }}>
           She ended her second marriage and embarked on a whirlwind romance with a boyfriend fourteen years her junior. Private jets to Saint Barthélemy, luxurious escapes across Europe, romantic adventures in Turkey, and extravagant summers in Italy replaced the discipline and responsibilities of her professional life.
         </p>
@@ -122,6 +167,152 @@ export const AlinaHababContent: React.FC = () => {
         <p style={{ textAlign: 'justify', marginBottom: '1.25rem' }}>
           <strong>And when the champagne bottles have dried and the honeymoon is over, and reality finally arrives, she may discover that the most expensive man in her life was the one she believed was giving her everything.</strong>
         </p>
+
+        {/* Source Citation */}
+        <div style={{ display: 'flex', justifyContent: 'flex-start', margin: '1.75rem 0 0' }}>
+          <div
+            style={{
+              padding: '10px 18px',
+              backgroundColor: '#ffffff',
+              border: '1px solid #e5e7eb',
+              borderRadius: '10px',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.04)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '10px',
+              boxSizing: 'border-box',
+            }}
+          >
+            {/* Newspaper Icon in theme navy */}
+          <span
+            style={{
+              color: '#1c2146',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+              <path d="M18 14h-8" />
+              <path d="M15 18h-5" />
+              <path d="M10 6h8v4h-8V6Z" />
+            </svg>
+          </span>
+
+          {/* Sources Label */}
+          <span
+            style={{
+              fontFamily: "'Merriweather', Georgia, serif",
+              fontSize: '15px',
+              fontWeight: 700,
+              color: '#111827',
+              letterSpacing: '-0.2px',
+            }}
+          >
+            Sources:
+          </span>
+
+          {/* Link 1: The New York Times */}
+          <a
+            href="https://www.nytimes.com/2026/11/10/us/politics/alina-habba-fired-pardon.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: "'Merriweather', Georgia, serif",
+              fontSize: '14.5px',
+              color: '#1f2937',
+              textDecoration: 'underline',
+              textUnderlineOffset: '3px',
+              textDecorationColor: '#d1d5db',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '4px',
+              transition: 'color 0.2s ease, text-decoration-color 0.2s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#1c2146';
+              e.currentTarget.style.textDecorationColor = '#1c2146';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = '#1f2937';
+              e.currentTarget.style.textDecorationColor = '#d1d5db';
+            }}
+          >
+            <span>The New York Times</span>
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#6b7280"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+
+          {/* Dot Separator */}
+          <span style={{ color: '#9ca3af', fontSize: '13px' }}>•</span>
+
+          {/* Link 2: GV Wire */}
+          <a
+            href="https://gvwire.com/2026/11/10/alina-habba-mildon-loses-50-million-contract-that-enraged-trump/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: "'Merriweather', Georgia, serif",
+              fontSize: '14.5px',
+              color: '#1f2937',
+              textDecoration: 'underline',
+              textUnderlineOffset: '3px',
+              textDecorationColor: '#d1d5db',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '4px',
+              transition: 'color 0.2s ease, text-decoration-color 0.2s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#1c2146';
+              e.currentTarget.style.textDecorationColor = '#1c2146';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = '#1f2937';
+              e.currentTarget.style.textDecorationColor = '#d1d5db';
+            }}
+          >
+            <span>GV Wire</span>
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#6b7280"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
 
         {/* Hashtag Keywords */}
         <div

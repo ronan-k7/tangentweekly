@@ -617,13 +617,12 @@ const ClientMarkRossini = () => {
 
             </ArticleWrapper>
 
-            {/* AUTHOR */}
             <div style={{ marginBottom: '30px' }}>
                 <AuthorInfo
-                    date="November 18, 2026"
-                    name="News Desk"
-                    role="News Desk"
-                    twitter="https://x.com/TangentWeekly"
+                    date="May 19, 2026"
+                    name="Daniel C. Smith"
+                    role="Founding Editor"
+                    twitter="https://x.com/Da_niel_Smith"
                 />
             </div>
 

@@ -25,6 +25,7 @@ import ClientS2 from '@/components/ClientS2';
 import ClientS3 from '@/components/ClientS3';
 import ClientS4 from '@/components/ClientS4';
 import ClientS5 from '@/components/ClientS5';
+import ClientS6 from '@/components/ClientS6';
 
 
 type Article = {
@@ -475,6 +476,18 @@ export default async function DetailPage({ params }: PageProps) {
         <NavigationSection />
         <main className={`container ${styles.content}`}>
           <ClientS3 />
+        </main>
+      </>
+    )
+  }
+  if (slug === 'mark-rossini-puerto-rico-corruption-debate-presidential-pardon') {
+
+    return (
+      <>
+        <SecondHeader />
+        <NavigationSection />
+        <main className={`container ${styles.content}`}>
+          <ClientS6 />
         </main>
       </>
     )
